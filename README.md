@@ -11,6 +11,16 @@ To connect to visionline, you must create a 3 webviews, each for one of the serv
 
 ## Step Two: Create a User Identity to Represent the Guest
 
+TODO
+
 ## Step Three: Enroll the User Identity to allow Phones to Sync
 
-## Step Four: ...
+TODO
+
+## Step Four: Create the Visionline User
+
+Now we create a Visionline User and connect it to our User Identity.
+
+## Step Five: Create the Visionline Credential
+
+TODO
