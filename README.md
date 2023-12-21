@@ -9,4 +9,8 @@ To connect to visionline, you must create a 3 webviews, each for one of the serv
 * Assa Abloy Credential Service
 * On-Prem Visionline
 
-## Step Two: Todo...
+## Step Two: Create a User Identity to Represent the Guest
+
+## Step Three: Enroll the User Identity to allow Phones to Sync
+
+## Step Four: ...
