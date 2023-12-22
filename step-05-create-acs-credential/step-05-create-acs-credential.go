@@ -3,6 +3,7 @@ package main
 import (
 	"context"
 	"log"
+	"os"
 
 	api "github.com/seamapi/go"
 	"github.com/seamapi/go/acs"
@@ -11,7 +12,7 @@ import (
 
 func main() {
 
-	client := goclient.NewClient(goclient.WithApiKey("seam_test2US6_9G4L2sJPeso5pitYJFa2Jpto"))
+	client := goclient.NewClient(goclient.WithApiKey(os.Getenv("SEAM_API_KEY")))
 
 	systems, sErr := client.Acs.Systems.List(context.Background(), nil)
 

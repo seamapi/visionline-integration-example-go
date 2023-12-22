@@ -3,6 +3,7 @@ package main
 import (
 	"context"
 	"log"
+	"os"
 
 	api "github.com/seamapi/go"
 	goclient "github.com/seamapi/go/client"
@@ -10,7 +11,7 @@ import (
 
 func main() {
 
-	client := goclient.NewClient(goclient.WithApiKey("seam_test2US6_9G4L2sJPeso5pitYJFa2Jpto"))
+	client := goclient.NewClient(goclient.WithApiKey(os.Getenv("SEAM_API_KEY")))
 
 	seamBridgeWebview, err := client.ConnectWebviews.Create(context.Background(), &api.ConnectWebviewsCreateRequest{
 		AcceptedProviders: []api.AcceptedProvider{"seam_bridge"},

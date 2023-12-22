@@ -3,6 +3,7 @@ package main
 import (
 	"context"
 	"log"
+	"os"
 
 	goclient "github.com/seamapi/go/client"
 	"github.com/seamapi/go/useridentities"
@@ -10,9 +11,9 @@ import (
 
 func main() {
 
-	client := goclient.NewClient(goclient.WithApiKey("seam_test2US6_9G4L2sJPeso5pitYJFa2Jpto"))
+	client := goclient.NewClient(goclient.WithApiKey(os.Getenv("SEAM_API_KEY")))
 
-	janeEmail := "seam@example.com"
+	janeEmail := "jane@example.com"
 
 	user, uErr := client.UserIdentities.Create(context.Background(), &useridentities.UserIdentitiesCreateRequest{
 		EmailAddress: &janeEmail,
