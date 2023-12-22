@@ -20,7 +20,7 @@ in the sample credentials:
 - `seam connect-webviews create --accepted-providers assa_abloy_credential_service`
   - Username: `jane`
   - Password: `1234`
-- `seam connect-webviews create --accepted-providers seam_bridge`
+- `seam connect-webviews create --accepted-providers visionline`
   - Username: `jane`
   - Password: `1234`
   - Lan IP: `192.168.1.100`
