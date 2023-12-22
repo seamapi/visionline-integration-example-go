@@ -53,7 +53,13 @@ in the sample credentials:
 
 Now we create a Visionline User and connect it to our User Identity.
 
-## Step Five: Create the Visionline Credential
+## Step Five: Assign User Access
+
+- `seam acs entrances grant-access`
+  - For `acs_user_id` select `Visionline` and `jane@example.com`
+  - For `acs_entrance_id` select any entrance
+
+## Step Six: Create the Visionline Credential
 
 - `seam acs credentials create`
   - For `acs_user_id` select `Visionline` then `jane@example.com`
