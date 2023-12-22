@@ -64,6 +64,8 @@ Now we create a Visionline User and connect it to our User Identity.
 
 ## Step Six: Create the Visionline Credential
 
+A `multi_phone_sync_credential` will automatically sync with all phones owned by a user identity.
+
 - `seam acs credentials create`
   - For `acs_user_id` select `Visionline` then `jane@example.com`
   - For `access_method` select `mobile_key`
