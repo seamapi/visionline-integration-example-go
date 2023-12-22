@@ -55,6 +55,9 @@ Now we create a Visionline User and connect it to our User Identity.
 
 ## Step Five: Assign User Access
 
+> You can see all your ACS credentials with `seam acs entrances list`, entrances are typically
+> named like "Room 301" or "Front Entrance", but in our demo data it's an empty string (sorry)
+
 - `seam acs entrances grant-access`
   - For `acs_user_id` select `Visionline` and `jane@example.com`
   - For `acs_entrance_id` select any entrance
