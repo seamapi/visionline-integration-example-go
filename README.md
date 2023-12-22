@@ -37,13 +37,27 @@ in the sample credentials:
 
 - `seam user-identities enrollment-automations launch`
   - For `user_identity_id` select `jane@example.com`
+  - For `credential_manager_acs_system_id` select "Assa Abloy Credential Service"
+  - For `create_credential_manager_user` select `true`
 
-TODO
 
 ## Step Four: Create the Visionline User
+
+- `seam acs users create`
+  - For `acs_system_id` select `Visionline`
+  - For `user_identity_id` select `jane@example.com`
+  - For `full_name` enter `Jane Doe` (or anything, but cannot be blank)
+  - Our command line doesn't support editing the `access_schedule` at the
+    moment, but normally you would want to set this to the duration of the
+    Guest's stay
 
 Now we create a Visionline User and connect it to our User Identity.
 
 ## Step Five: Create the Visionline Credential
 
-TODO
+- `seam acs credentials create`
+  - For `acs_user_id` select `Visionline` then `jane@example.com`
+  - For `access_method` select `mobile_key`
+  - For `is_multi_phone_sync_credential` select `true`
+
+
