@@ -19,7 +19,7 @@ func main() {
 	}
 
 	if len(userIdentities) == 0 {
-		log.Panic("No user indentity found")
+		log.Panic("No user identity found")
 
 	}
 
