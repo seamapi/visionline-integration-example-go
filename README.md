@@ -71,4 +71,15 @@ A `multi_phone_sync_credential` will automatically sync with all phones owned by
   - For `access_method` select `mobile_key`
   - For `is_multi_phone_sync_credential` select `true`
 
+## Connecting the Guest to their User with a Phone
+
+There are 3 ways to connect a user to their phone, we're going to go over the Mobile SDK/you
+build a custom app version here, but it's even easier with Seam Passport.
+
+### Step Seven: Create a Client Session when a User Logs In to Your App
+
+Use `seam client_sessions create --user_identity_id=...` to create a a client session for this
+user.
+
+Now you must give the client session to the SeamDeviceController in your app!
 
