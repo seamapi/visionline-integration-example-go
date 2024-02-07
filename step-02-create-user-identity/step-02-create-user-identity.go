@@ -5,8 +5,8 @@ import (
 	"log"
 	"os"
 
+	seamapigo "github.com/seamapi/go"
 	goclient "github.com/seamapi/go/client"
-	"github.com/seamapi/go/useridentities"
 )
 
 func main() {
@@ -15,7 +15,7 @@ func main() {
 
 	janeEmail := "jane@example.com"
 
-	user, uErr := client.UserIdentities.Create(context.Background(), &useridentities.UserIdentitiesCreateRequest{
+	user, uErr := client.UserIdentities.Create(context.Background(), &seamapigo.UserIdentitiesCreateRequest{
 		EmailAddress: &janeEmail,
 	})
 

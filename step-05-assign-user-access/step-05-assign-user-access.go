@@ -34,7 +34,7 @@ func main() {
 	}
 
 	users, uErr := client.Acs.Users.List(context.Background(), &acs.UsersListRequest{
-		AcsSystemId: visionlineSystem.AcsSystemId,
+		AcsSystemId: &visionlineSystem.AcsSystemId,
 	})
 
 	if uErr != nil {
