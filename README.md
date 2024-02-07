@@ -70,6 +70,8 @@ A `multi_phone_sync_credential` will automatically sync with all phones owned by
   - For `acs_user_id` select `Visionline` then `jane@example.com`
   - For `access_method` select `mobile_key`
   - For `is_multi_phone_sync_credential` select `true`
+  - For `card_format` select `visionline_metadata`
+  - For `starts_at` and `ends_at` select the valid window of the credential
 
 ## Connecting the Guest to their User with a Phone
 
