@@ -4,6 +4,7 @@ import (
 	"context"
 	"log"
 	"os"
+	"time"
 
 	api "github.com/seamapi/go"
 	"github.com/seamapi/go/acs"
@@ -29,22 +30,33 @@ func main() {
 	}
 
 	users, err := client.Acs.Users.List(context.Background(), &acs.UsersListRequest{
-		AcsSystemId: visionlineSystem.AcsSystemId,
+		AcsSystemId: &visionlineSystem.AcsSystemId,
 	})
 
 	isMultiPhoneSyncCredential := true
 
 	log.Println(users, err)
 
-	user, uErr := client.Acs.Credentials.Create(context.Background(), &acs.CredentialsCreateRequest{
+	startsAt := time.Now().Format("2006-01-02T15:04:00Z")
+
+	endsAt := time.Now().Add(24 * time.Hour).Format("2006-01-02T15:04:00Z")
+
+	log.Println(startsAt)
+
+	credentials, uErr := client.Acs.Credentials.Create(context.Background(), &acs.CredentialsCreateRequest{
 		AcsUserId:                  users.AcsUsers[0].AcsUserId,
 		AccessMethod:               "mobile_key",
 		IsMultiPhoneSyncCredential: &isMultiPhoneSyncCredential,
+		StartsAt:                   &startsAt,
+		EndsAt:                     &endsAt,
+		VisionlineMetadata: &acs.CredentialsCreateRequestVisionlineMetadata{
+			CardFormat: acs.CredentialsCreateRequestVisionlineMetadataCardFormatRfid48.Ptr(),
+		},
 	})
 
 	if uErr != nil {
 		log.Panic(uErr)
 	}
 
-	log.Println(user)
+	log.Println(credentials)
 }
